@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="ignite">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:element name="modules" minOccurs="0">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="title" minOccurs="0" type="xsd:string"/>
+                            <xsd:element name="vehicle" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:string">
+                                            <xsd:attribute name="brand" type="xsd:string" use="required"/>
+                                            <xsd:attribute name="des" type="xsd:string" use="required"/>
+                                            <xsd:attribute name="id" type="xsd:int" use="required"/>
+                                            <xsd:attribute name="servicetype" type="xsd:normalizedString" use="required"/>
+                                            <xsd:attribute name="status" type="xsd:int" use="required"/>
+                                            <xsd:attribute name="vehicleno" type="xsd:normalizedString" use="required"/>
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="m" minOccurs="0">
+                                <xsd:complexType mixed="true">
+                                    <xsd:sequence>
+                                        <xsd:element name="mechanic" maxOccurs="unbounded">
+                                            <xsd:complexType mixed="true">
+                                                <xsd:sequence>
+                                                    <xsd:element name="id" minOccurs="0" type="xsd:int"/>
+                                                    <xsd:element name="name" minOccurs="0" type="xsd:normalizedString"/>
+                                                    <xsd:element name="address" minOccurs="0" type="xsd:string"/>
+                                                    <xsd:element name="phone" minOccurs="0" type="xsd:long"/>
+                                                    <xsd:element name="type" minOccurs="0" type="xsd:normalizedString"/>
+                                                    <xsd:element name="usetype" minOccurs="0" type="xsd:normalizedString"/>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
